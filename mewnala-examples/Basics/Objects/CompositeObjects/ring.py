@@ -1,0 +1,25 @@
+# AUTO-CONVERTED from Processing Python Mode to mewnala by convert_to_mewnala.py.
+# This is a first-pass mechanical conversion and has NOT been tested — review and run before relying on it.
+from mewnala import *
+class Ring(object):
+
+    def start(self, xpos, ypos):
+        self.x = xpos  # x-coordinate
+        self.y = ypos  # y-coordinate
+        self.diameter = 1  # Diameter of the ring
+        self.on = False  # Turns the display on and off
+        self.on = True
+
+    def grow(self):
+        if self.on:
+            self.diameter += 0.5
+            if self.diameter > width * 2:
+                self.diameter = 0.0
+
+    def display(self):
+        if self.on:
+            no_fill()
+            stroke_weight(4)
+            stroke(155, 153)
+            ellipse(self.x, self.y, self.diameter, self.diameter)
+

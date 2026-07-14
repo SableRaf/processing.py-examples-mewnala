@@ -1,0 +1,24 @@
+# AUTO-CONVERTED from Processing Python Mode to mewnala by convert_to_mewnala.py.
+# This is a first-pass mechanical conversion and has NOT been tested — review and run before relying on it.
+from mewnala import *
+# A class to describe a Polygon (with a PShape).
+class Polygon(object):
+
+    def __init__(self, s):
+        self.x = random(width)
+        self.y = random(-500, -100)
+        self.s = s
+        self.speed = random(2, 6)
+
+    # Simple motion
+    def move(self):
+        self.y += self.speed
+        if self.y > height + 100:
+            self.y = -100
+
+    # Draw the object.
+    def display(self):
+        with push_matrix():
+            translate(self.x, self.y)
+            shape(self.s)
+

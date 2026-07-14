@@ -1,0 +1,30 @@
+# AUTO-CONVERTED from Processing Python Mode to mewnala by convert_to_mewnala.py.
+# This is a first-pass mechanical conversion and has NOT been tested — review and run before relying on it.
+"""
+Random Gaussian. 
+
+This sketch draws ellipses with x and y locations tied to a gaussian distribution of random numbers.
+"""
+from mewnala import *
+
+
+def setup():
+    size(640, 360)
+    background(0)
+
+
+def draw():
+    # Get a gaussian random number w/ mean of 0 and standard deviation of 1.0
+    val = random_gaussian()
+    sd = 60  # Define a standard deviation
+    # Define a mean value (middle of the screen along the x-axis)
+    mean = width / 2
+    # Scale the gaussian random number by standard deviation and mean
+    x = (val * sd) + mean
+    no_stroke()
+    fill(255, 10)
+    no_stroke()
+    # Draw an ellipse at our "normal" random location
+    ellipse(x, height / 2, 32, 32)
+
+run()

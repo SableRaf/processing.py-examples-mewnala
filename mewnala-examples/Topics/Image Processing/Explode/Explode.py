@@ -1,0 +1,42 @@
+# AUTO-CONVERTED from Processing Python Mode to mewnala by convert_to_mewnala.py.
+# This is a first-pass mechanical conversion and has NOT been tested — review and run before relying on it.
+"""
+Explode
+by Daniel Shiffman.
+
+Mouse horizontal location controls breaking apart of image and
+maps pixels from a 2D image into 3D space. Pixel brightness controls
+translation along z axis.
+"""
+from mewnala import *
+
+def setup():
+    size(640, 360, P3D)
+    # Number of columns and rows in our system
+    global columns, rows, cellsize, img
+    img = load_image("eames.jpg")  # Load the image
+    cellsize = 2  # Dimensions of each cell in the grid
+    columns = img.width / cellsize  # Calculate # of columns
+    rows = img.height / cellsize  # Calculate # of rows
+
+def draw():
+    background(0)
+    # Begin loop for columns
+    for i in range(columns):
+        # Begin loop for rows
+        for j in range(rows):
+            x = i * cellsize + cellsize / 2  # x position
+            y = j * cellsize + cellsize / 2  # y position
+            loc = x + y * img.width  # Pixel array location
+            c = img.pixels[loc]  # Grab the color
+            # Calculate a z position as a function of mouseX and pixel
+            # brightness
+            z = (mouse_x / float(width)) * brightness(img.pixels[loc]) - 20.0
+            # Translate to the location, set fill and stroke, and draw the rect
+            with push_matrix():
+                translate(x + 200, y + 100, z)
+                fill(c, 204)
+                no_stroke()
+                rect_mode(CENTER)
+                rect(0, 0, cellsize, cellsize)
+run()

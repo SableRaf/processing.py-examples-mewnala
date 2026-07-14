@@ -1,0 +1,35 @@
+# AUTO-CONVERTED from Processing Python Mode to mewnala by convert_to_mewnala.py.
+# This is a first-pass mechanical conversion and has NOT been tested — review and run before relying on it.
+"""
+Pulses.
+
+Software drawing instruments can follow a rhythm or abide by rules independent
+of drawn gestures. This is a form of collaborative drawing in which the draftsperson
+controls some aspects of the image and the software controls others.
+"""
+from mewnala import *
+
+offset = 0
+
+
+def setup():
+    size(640, 360)
+    background(102)
+    no_stroke()
+    fill(0, 102)
+
+
+def draw():
+    global offset
+    # Draw only when mouse is pressed
+    if mouse_is_pressed == True:
+        offset += 5
+        radius = cos(radians(offset)) * 12.0
+        for angle in range(0, 360, 75):
+            x_off = cos(radians(angle)) * radius
+            y_off = sin(radians(angle)) * radius
+            fill(0)
+            ellipse(mouse_x + x_off, mouse_y + y_off, radius, radius)
+        fill(255)
+        ellipse(mouse_x, mouse_y, 2, 2)
+run()

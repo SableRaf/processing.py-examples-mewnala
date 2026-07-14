@@ -1,0 +1,30 @@
+# AUTO-CONVERTED from Processing Python Mode to mewnala by convert_to_mewnala.py.
+# This is a first-pass mechanical conversion and has NOT been tested — review and run before relying on it.
+"""
+LoadFile 1
+
+Loads a text file that contains two numbers separated by a tab ('\t').
+A new pair of numbers is loaded each frame and used to draw a point on the screen.
+"""
+from mewnala import *
+
+index = 0
+
+def setup():
+    global lines
+    size(200, 200)
+    background(0)
+    stroke(255)
+    frame_rate(12)
+    lines = load_strings("positions.txt")
+
+def draw():
+    global index
+    if index < len(lines):
+        pieces = lines[index].split('\t')
+        if len(pieces) == 2:
+            x, y = int(pieces[0]) * 2, int(pieces[1]) * 2
+            point(x, y)
+        # Go to the next line for the next run through draw()
+        index = index + 1
+run()

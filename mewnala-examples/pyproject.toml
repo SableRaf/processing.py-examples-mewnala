@@ -1,0 +1,7 @@
+[project]
+name = "mewnala-examples"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "mewnala>=0.0.7",
+]
