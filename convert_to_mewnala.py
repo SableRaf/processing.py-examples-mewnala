@@ -28,7 +28,7 @@ import tokenize
 from collections import defaultdict
 from pathlib import Path
 
-DEFAULT_SRC = "examples" # The default source directory for Processing.py examples.
+DEFAULT_SRC = "examples-python-mode" # The default source directory for Processing.py examples.
 DEFAULT_DST = "mewnala-examples" # The default destination directory for the converted mewnala examples.
 
 NOTE = (
