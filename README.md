@@ -34,6 +34,21 @@ In case you want to convert the examples yourself, you can use the provided scri
 python convert_to_mewnala.py --src examples-python-mode --dst examples-mewnala
 ```
 
+To statically find names used by the examples that are not exported by `mewnala`:
+
+```bash
+# Ranked summary (examples affected, references, and source files)
+uv run scan_missing_api.py --top 25
+
+# Write a compact Markdown report with name, affected-example count, and link
+uv run scan_missing_api.py --short --top 25 --output missing-api.md
+
+# Include every source location or save a complete JSON report. All report
+# formats include links such as https://processing.org/reference/PVector.html.
+uv run scan_missing_api.py --top 25 --locations
+uv run scan_missing_api.py --json --output missing-api.json
+```
+
 ## License & Credit
 
 The original [Processing examples](https://github.com/processing/processing-examples/) written in Java include the following credit line:
