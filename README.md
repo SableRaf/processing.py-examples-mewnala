@@ -1,9 +1,9 @@
+> [!WARNING]
+> This is not an official port of the Processing examples to mewnala, and it is not intended for teaching, learning, or production use.
+
 # Processing.py Examples → mewnala
 
 A mechanical port of Processing.py examples to [mewnala](https://github.com/mewnala/mewnala) for research purposes only. 
-
-> [!WARNING]
-> This is not an official port of the Processing examples to mewnala, and it is not intended for teaching, learning, or production use.
 
 This repository started as a fork of the [Processing.py repository](https://github.com/jdf/processing.py/) with most files removed, leaving only the examples that were ported from the original Java examples. Visit the Processing.py examples repository for the [full list of Python examples](https://github.com/jdf/processing.py/tree/master/mode/examples).
 
