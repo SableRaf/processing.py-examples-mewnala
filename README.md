@@ -18,6 +18,22 @@ The conversion is mechanical and not guaranteed to be correct. Some examples may
 - `convert_to_mewnala.py` — Conversion utility script
 
 
+## Usage
+
+To run a sketch, navigate to the sketch folder and use the `uv` command:
+
+```bash
+# run a sketch
+uv run sketch.py
+```
+
+In case you want to convert the examples yourself, you can use the provided script:
+
+```bash
+# convert all sketches from Processing.py to mewnala
+python convert_to_mewnala.py --src examples-python-mode --dst examples-mewnala
+```
+
 ## License & Credit
 
 The original [Processing examples](https://github.com/processing/processing-examples/) written in Java include the following credit line:
